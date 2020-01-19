@@ -1,0 +1,41 @@
+{
+	"name": "neocities-deploy",
+	"version": "1.0.0",
+	"description": "Node CLI for Neocities client.",
+	"main": "src/index.js",
+	"scripts": {
+		"test": "tape test/*.tests.js",
+		"write:readme": "node -e \"const os=require('os'); const fs=require('fs');const pre='~~~';fs.writeFileSync('./README.md',['# neocities-deploy',pre,fs.readFileSync('./src/help.txt',{ encoding:'utf8'}),pre,'## Example',pre,'neocities-deploy --source public',pre].join(os.EOL));\"",
+		"preversion": "npm run test && npm run write:readme",
+		"version": "",
+		"postversion": "git push && git push --tags && npm publish"
+	},
+	"keywords": [
+		"neocities",
+		"cli",
+		"deploy",
+		"upload",
+		"push"
+	],
+	"author": "Nick Boon",
+	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/nickboon/neocities-deploy.git",
+		"web": "https://github.com/nickboon/neocities-deploy"
+	},
+	"bugs": {
+		"url": "https://github.com/nickboon/neocities-deploy/issues"
+	},
+	"homepage": "https://github.com/nickboon/neocities-deploy",
+	"dependencies": {
+		"glob": "^7.1.6",
+		"docopt": "^0.6.2",
+		"neocities": "0.0.3",
+		"readline-sync": "^1.4.10"
+	},
+	"devDependencies": {
+		"tape": "^4.13.0"
+	},
+	"bin": "./src/index.js"
+}
