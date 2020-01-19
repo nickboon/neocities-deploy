@@ -1,6 +1,6 @@
 {
 	"name": "neocities-deploy",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Node CLI for Neocities client.",
 	"main": "src/index.js",
 	"scripts": {
