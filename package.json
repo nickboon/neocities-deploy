@@ -3,6 +3,9 @@
 	"version": "1.0.2",
 	"description": "Node CLI for Neocities client.",
 	"main": "src/index.js",
+	"files": [
+		"src"
+	],
 	"scripts": {
 		"test": "tape test/*.tests.js",
 		"write:readme": "node -e \"const os=require('os'); const fs=require('fs');const pre='~~~';fs.writeFileSync('./README.md',['# neocities-deploy',pre,fs.readFileSync('./src/help.txt',{ encoding:'utf8'}),pre,'## Example',pre,'neocities-deploy --source public',pre].join(os.EOL));\"",
